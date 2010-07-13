@@ -1,0 +1,55 @@
+package servlets;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import util.Day;
+import util.Period;
+
+import beans.Course;
+import beans.Schedule;
+import db.CourseTable;
+import db.ScheduleTable;
+
+/**
+ * Servlet implementation class ScheduleServlet
+ */
+public class ScheduleServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ScheduleServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		List<Schedule> schedules = ScheduleTable.selectAll();
+		request.setAttribute("scheduleList", schedules);
+		
+		String url="/schedules.jsp";
+		ServletContext sc = getServletContext();
+		RequestDispatcher rd = sc.getRequestDispatcher(url);
+		rd.forward(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+
+}

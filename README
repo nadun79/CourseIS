@@ -1,0 +1,21 @@
+Justin Mancinelli
+
+Practical Assignment 10 for INFS3202 at the University of Queensland
+
+Description:
+    A university course information system implemented in JSP with MySQL connectivity.
+    The focus of this project was to implement a course scheduling algorithm to 
+    minimize clashes. I took a naive approach to the algorithm and a very inefficient 
+    way of dealing with database connections. It is a proof of concept--that I am able
+    to design and program a complex information system requiring database connectivity,
+    authentication and automation. We had a choice of JSP or PHP and I chose JSP
+    because I am partial to Java and believe experience with web programming in a Java
+    environment is more sought-after in industry.
+    
+    I was unable to complete parts 3b and 4b of the design specification but was still
+    awarded full marks for the amount of skill and understanding I demonstrated.
+
+Files:
+    INFS3202_2010_Prac_10.pdf -- Design Specification
+    src/* -- Java source
+    WebContent/* -- JSP source and dependency libraries.
